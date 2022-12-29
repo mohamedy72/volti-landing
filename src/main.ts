@@ -1,23 +1,41 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import { setupCounter } from './counter'
+"use strict";
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+/**
+ *  Preloading
+ *  */
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+const loadElement = document.querySelector<HTMLDivElement>("[data-preloader]");
+
+window.addEventListener("load", () => {
+  loadElement?.classList.add("loaded");
+});
+
+/**
+ *  Mobile Navbar
+ *  */
+
+const navbar = document.querySelector("[data-navbar]");
+const navToggler = document.querySelector("[data-nav-toggler]");
+
+const toggleNavbar = () => {
+  navbar?.classList.toggle("active");
+  navToggler?.classList.toggle("active");
+};
+
+navToggler?.addEventListener("click", toggleNavbar);
+
+/**
+ *  Header
+ */
+
+const header = document.querySelector("[data-header]");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY >= 100) {
+    header?.classList.add("active");
+  } else {
+    header?.classList.remove("active");
+  }
+});
+
+export {};
