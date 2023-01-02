@@ -297,6 +297,24 @@ h6 {
   overflow: hidden;
 }
 
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 1s ease;
+}
+
+[data-reveal="left"] {
+  transform: translateX(-30px);
+}
+[data-reveal="right"] {
+  transform: translateX(30px);
+}
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /*-----------------------------------*\
   #Preloaders
 \*-----------------------------------*/

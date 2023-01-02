@@ -40,4 +40,22 @@ window.addEventListener("scroll", () => {
   }
 });
 
+/**
+ * # Scroll Reveal
+ */
+
+const revealElements = document.querySelectorAll("[data-reveal]");
+
+const scrollReveal = function () {
+  revealElements.forEach((el) => {
+    if (el.getBoundingClientRect().top < window.innerHeight / 1.2) {
+      el.classList.add("revealed");
+    } else {
+      el.classList.remove("revealed");
+    }
+  });
+};
+
+window.addEventListener("scroll", scrollReveal);
+window.addEventListener("load", scrollReveal);
 export {};
