@@ -941,3 +941,28 @@ h6 {
   background-color: var(--yellow-green);
   border-color: var(--yellow-green);
 }
+/*-----------------------------------*\
+  #Back to top
+\*-----------------------------------*/
+
+.back-top-btn {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  background-color: var(--yellow-green);
+  color: var(--white);
+  font-size: 2rem;
+  padding: 10px;
+  border-radius: var(--radius-circle);
+  border: 3px solid var(--white);
+  opacity: 0;
+  transition: var(--transition-1);
+}
+
+.back-top-btn.active {
+  opacity: 1;
+  transform: translateY(-10px);
+}
+/*-----------------------------------*\
+  #Media Quieries
+\*-----------------------------------*/
