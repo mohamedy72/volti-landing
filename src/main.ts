@@ -29,7 +29,6 @@ navToggler?.addEventListener("click", toggleNavbar);
  */
 
 const header = document.querySelector("[data-header]");
-
 window.addEventListener("scroll", () => {
   if (window.scrollY >= 100) {
     header?.classList.add("active");
@@ -37,5 +36,6 @@ window.addEventListener("scroll", () => {
     header?.classList.remove("active");
   }
 });
+
 
 export {};
